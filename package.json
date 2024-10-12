@@ -7,7 +7,9 @@
     "start": "nx serve",
     "test": "nx test",
     "build": "npm-run-all build:anabasis copy:anabasis build:alanrich-dev",
-    "build:anabasis": "nx build anabasis",
+    "build:anabasis": "npm-run-all build:anabasis-frontend build:anabasis-backend",
+    "build:anabasis-frontend": "cd apps/anabasis/src/client && npm install && npm run build",
+    "build:anabasis-backend": "nx build anabasis",
     "build:alanrich-dev": "nx build alanrich-dev",
     "copy:anabasis": "cp -R dist/apps/anabasis/* apps/alanrich-dev/public/work-sample/"
   },
