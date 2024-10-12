@@ -5,25 +5,16 @@
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nrwl/web:build",
+      "executor": "@nrwl/node:build",
       "options": {
         "outputPath": "dist/apps/anabasis",
-        "index": "apps/anabasis/public/index.html",
-        "main": "apps/anabasis/src/index.js",
-        "polyfills": "apps/anabasis/src/polyfills.js",
-        "assets": ["apps/anabasis/src/assets"],
-        "scripts": []
-      },
-      "configurations": {
-        "production": {
-          "optimization": true,
-          "sourceMap": false,
-          "extractCss": true
-        }
+        "main": "apps/anabasis/src/server/server.js",
+        "assets": ["apps/anabasis/src/client"],
+        "webpackConfig": "apps/anabasis/webpack.config.js"
       }
     },
     "serve": {
-      "executor": "@nrwl/web:dev-server",
+      "executor": "@nrwl/node:execute",
       "options": {
         "buildTarget": "anabasis:build"
       }

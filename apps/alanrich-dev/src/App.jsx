@@ -23,11 +23,25 @@ function App() {
             path="/personal-interests"
             element={<PersonalInterestsWrapper />}
           />
-          <Route path="/work-sample" />
+          <Route path="/work-sample" element={WorkSample} />
           <Route path="/Github" />
         </Routes>
       </Router>
     </ThemeProvider>
+  );
+}
+
+// TODO: refector out
+function WorkSample() {
+  return (
+    <div>
+      <iframe
+        // src="/work-sample/index.html"
+        src="http://localhost:3001"
+        style={{ width: "100%", height: "100vh", border: "none" }}
+        title="Work Sample"
+      ></iframe>
+    </div>
   );
 }
 

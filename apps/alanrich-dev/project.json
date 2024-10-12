@@ -5,25 +5,28 @@
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nrwl/web:build",
+      "executor": "@nrwl/react:build",
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/alanrich-dev",
-        "index": "apps/alanrich-dev/public/index.html",
         "main": "apps/alanrich-dev/src/index.js",
-        "polyfills": "apps/alanrich-dev/src/polyfills.js",
-        "assets": ["apps/alanrich-dev/src/assets"],
-        "scripts": []
+        "assets": ["apps/alanrich-dev/src/assets", "apps/alanrich-dev/public"],
+        "index": "apps/alanrich-dev/public/index.html",
+        "webpackConfig": "apps/alanrich-dev/webpack.config.js"
       },
       "configurations": {
         "production": {
+          "fileReplacements": [],
           "optimization": true,
           "sourceMap": false,
-          "extractCss": true
+          "extractCss": true,
+          "namedChunks": false,
+          "aot": false
         }
       }
     },
     "serve": {
-      "executor": "@nrwl/web:dev-server",
+      "executor": "@nrwl/react:dev-server",
       "options": {
         "buildTarget": "alanrich-dev:build"
       }

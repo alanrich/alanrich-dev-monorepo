@@ -11,6 +11,10 @@
       }
     }
   },
+  "installation": {
+    "version": "latest",
+    "plugins": []
+  },
   "projects": {
     "alanrich-dev": {
       "root": "apps/alanrich-dev",
@@ -22,5 +26,27 @@
       "sourceRoot": "apps/anabasis/src",
       "projectType": "application"
     }
-  }
+  },
+  "targetDefaults": {
+    "@nx/esbuild:esbuild": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["default", "^default"]
+    }
+  },
+  "plugins": [
+    {
+      "plugin": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "lint"
+      }
+    },
+    {
+      "plugin": "@nx/jest/plugin",
+      "options": {
+        "targetName": "test"
+      },
+      "exclude": ["apps/anabasis-api-e2e/**/*"]
+    }
+  ]
 }

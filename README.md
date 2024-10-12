@@ -5,3 +5,5 @@
 #### Modify Start script in Anabasis/package.json, its currently pointed to server
 
 #### project.json files are referencing styles at "apps/anabasis/src/styles.css", this path is invalid
+
+#### Refactor the WorkSample component out of the App.jsx
