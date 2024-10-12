@@ -1,0 +1,32 @@
+{
+  "name": "anabasis",
+  "root": "apps/anabasis",
+  "sourceRoot": "apps/anabasis/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:build",
+      "options": {
+        "outputPath": "dist/apps/anabasis",
+        "index": "apps/anabasis/public/index.html",
+        "main": "apps/anabasis/src/index.js",
+        "polyfills": "apps/anabasis/src/polyfills.js",
+        "assets": ["apps/anabasis/src/assets"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "sourceMap": false,
+          "extractCss": true
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "anabasis:build"
+      }
+    }
+  }
+}

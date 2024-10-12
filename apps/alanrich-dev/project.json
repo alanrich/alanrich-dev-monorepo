@@ -1,0 +1,32 @@
+{
+  "name": "alanrich-dev",
+  "root": "apps/alanrich-dev",
+  "sourceRoot": "apps/alanrich-dev/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:build",
+      "options": {
+        "outputPath": "dist/apps/alanrich-dev",
+        "index": "apps/alanrich-dev/public/index.html",
+        "main": "apps/alanrich-dev/src/index.js",
+        "polyfills": "apps/alanrich-dev/src/polyfills.js",
+        "assets": ["apps/alanrich-dev/src/assets"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "sourceMap": false,
+          "extractCss": true
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "alanrich-dev:build"
+      }
+    }
+  }
+}

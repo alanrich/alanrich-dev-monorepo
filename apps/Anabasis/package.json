@@ -1,5 +1,5 @@
 {
-  "name": "anabasis-root",
+  "name": "anabasis",
   "version": "1.0.0",
   "scripts": {
     "start": "cd Server && node server.js",
