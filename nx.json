@@ -1,0 +1,26 @@
+{
+  "npmScope": "alanrich",
+  "affected": {
+    "defaultBase": "main"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
+    }
+  },
+  "projects": {
+    "alanrich-dev": {
+      "root": "apps/alanrich-dev",
+      "sourceRoot": "apps/alanrich-dev/src",
+      "projectType": "application"
+    },
+    "anabasis": {
+      "root": "apps/anabasis",
+      "sourceRoot": "apps/anabasis/src",
+      "projectType": "application"
+    }
+  }
+}
