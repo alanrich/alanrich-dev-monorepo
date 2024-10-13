@@ -5,13 +5,17 @@
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nrwl/react:build",
+      "executor": "@nrwl/web:build",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/alanrich-dev",
-        "main": "apps/alanrich-dev/src/index.js",
-        "assets": ["apps/alanrich-dev/src/assets", "apps/alanrich-dev/public"],
         "index": "apps/alanrich-dev/public/index.html",
+        "main": "apps/alanrich-dev/src/index.js",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/alanrich-dev/tsconfig.app.json",
+        "assets": ["apps/alanrich-dev/src/assets", "apps/alanrich-dev/public"],
+        "styles": [],
+        "scripts": [],
         "webpackConfig": "apps/alanrich-dev/webpack.config.js"
       },
       "configurations": {
@@ -26,7 +30,7 @@
       }
     },
     "serve": {
-      "executor": "@nrwl/react:dev-server",
+      "executor": "@nrwl/web:dev-server",
       "options": {
         "buildTarget": "alanrich-dev:build"
       }

@@ -5,12 +5,14 @@
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nrwl/node:build",
+      "executor": "@nrwl/node:node",
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/anabasis",
         "main": "apps/anabasis/src/server/server.js",
-        "assets": ["apps/anabasis/src/client"],
-        "webpackConfig": "apps/anabasis/webpack.config.js"
+        "outputFileName": "main.js",
+        "tsConfig": "apps/anabasis/tsconfig.app.json",
+        "assets": ["apps/anabasis/.env", "apps/anabasis/src/client"]
       }
     },
     "serve": {
